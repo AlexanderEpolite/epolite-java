@@ -335,7 +335,7 @@ public class EPOLITE {
     }
     
     //for testing
-    public static void main(String[] args) throws Exception {
+    private static void main(String[] args) throws Exception {
         EPOLITEKeypair epoliteKeyPair = createEpoliteKeypair();
         
         byte[] b = "qwerty".getBytes();
