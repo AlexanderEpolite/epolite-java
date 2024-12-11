@@ -190,10 +190,8 @@ public class EPOLITE {
 
     //load kyber public key to BC object instead of byte[]
     private static BCKyberPrivateKey loadKyberPrivateKey(byte[] privateKeyBytes) throws Exception {
-        // Convert raw bytes into a PrivateKeyInfo object
         PrivateKeyInfo privateKeyInfo = PrivateKeyInfo.getInstance(privateKeyBytes);
-
-        // Use BCKyberPrivateKey constructor with PrivateKeyInfo
+        
         return new BCKyberPrivateKey(privateKeyInfo);
     }
 
@@ -216,7 +214,7 @@ public class EPOLITE {
         
         var pub = loadKyberPublicKey(bi.toByteArray());
         
-        var shared_key = getKyberEncapsulationSending((PublicKey) pub);
+        var shared_key = getKyberEncapsulationSending(pub);
         
         byte[] iv = new byte[12];
         new SecureRandom().nextBytes(iv);
